@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
+    animation: gradientBackground 8s infinite alternate;
+}
+
+@keyframes gradientBackground {
+    0% { background: linear-gradient(135deg, #f37ddb, #2196F3); }
+    50% { background: linear-gradient(135deg, #FF9800, #091cf2); }
+    100% { background: linear-gradient(135deg, #2196F3, #c414fe); }
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.weather-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.weather-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+#city-input {
+    padding: 15px;
+    margin: 15px 0;
+    width: 70%;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#city-input:focus {
+    outline: none;
+    border-color: #2196F3;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+}
+
+#city-input::placeholder {
+    color: #bbb;
+    font-style: italic;
+}
+
+#city-input-btn {
+    padding: 12px 20px;
+    background: linear-gradient(to right, #2196F3, #1565C0);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+#city-input-btn:hover {
+    background: linear-gradient(to right, #1565C0, #0D47A1);
+    transform: translateY(-3px);
+}
+
+#weather-info {
+    display: none;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#weather-icon {
+    width: 120px;
+    height: 120px;
+    margin: 15px 0;
+}
+
+#temperature {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+#description {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #555;
+    font-style: italic;
+}
+
+#wind-speed,
+#date {
+    font-size: 16px;
+    color: rgb(255, 0, 0);
+    margin: 5px 0;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+    .weather-card {
+        padding: 20px;
+        width: 90%;
+    }
+
+    #city-input {
+        width: 100%;
+    }
+}
